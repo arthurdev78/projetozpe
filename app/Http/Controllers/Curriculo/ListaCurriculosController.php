@@ -15,9 +15,11 @@ class ListaCurriculosController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, $id = null)
     {
-        //
+        if (!empty($id))
+            $curriculos = $this->curriculos->findOrFail($id);
+        else
         $curriculos = $this->curriculos->get();
         return response ()->json($curriculos, 200);   
     }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Curriculo\CriarCurriculoController;
+use App\Http\Controllers\Curriculo\EditarCurriculoController;
 use App\Http\Controllers\Curriculo\ListaCurriculosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,5 +31,7 @@ Route::post('/code/{id} ', function(Request $request, $id) {
     return response () ->json ('Houve um problema!', 500);
 }) ->name ('dependencia')->where(['id'=> '[0-9]+']);
 
-Route::get('/curriculo/listar', ListaCurriculosController::class);
-Route::post('/curriculo/salvar', CriarCurriculoController::class);
+Route::get('/curriculo/{id?}', ListaCurriculosController::class);
+Route::post('/curriculo', CriarCurriculoController::class);
+Route::put('/curriculo/{id}', EditarCurriculoController::class)-> where(['id' => '[0-9]+']);
+Route::delete('/curriculo/{id}', DeleteCurriculoController::class)-> where(['id' => '[0-9]+']);
