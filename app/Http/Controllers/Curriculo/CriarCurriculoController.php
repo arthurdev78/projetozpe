@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Curriculo;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Curriculo\CriarCurriculoRequest;
 use App\Models\Curriculo\Curriculo;
 use Exception;
 use Illuminate\Http\Request;
@@ -15,9 +16,9 @@ class CriarCurriculoController extends Controller
    {
     $this->curriculo = $curriculo;
    } 
-    public function __invoke(Request $request)
+    public function __invoke(CriarCurriculoRequest $request)
     {
-  
+        
          try {
             $curriculo = $this->curriculo->create($request->only([
 

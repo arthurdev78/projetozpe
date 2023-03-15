@@ -9,7 +9,34 @@
 <body>
     <h1> SITE DO CURSO DA ZPE</h1>
     <hr>
-    <img width="500" src="https://thumbs.dreamstime.com/z/ol%C3%A1-mundo-12400061.jpg" alt="Minha Figura">
+   <form action="/pagina-processa-dados-do-form" method="post">
+   
+    <div>
+        <label for ="nome" > Nome: </label>
+
+   
+   
+    <table border = "3">
+    <tr> 
+    <td> Nome</td>
+
+    <td> SObrenome</td>
+    <td> Email </td>
+
+    </tr>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </table>
    <strong>  {{ route ('sitezinhoindex') }}
    <a href="{{ ('teste') }}" >link</a>
 
