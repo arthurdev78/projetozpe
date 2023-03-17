@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Curriculo\CriarCurriculoController;
+use App\Http\Controllers\Curriculo\DeletarCurriculoController;
 use App\Http\Controllers\Curriculo\EditarCurriculoController;
 use App\Http\Controllers\Curriculo\ListaCurriculosController;
 use Illuminate\Http\Request;
@@ -34,4 +35,4 @@ Route::post('/code/{id} ', function(Request $request, $id) {
 Route::get('/curriculo/{id?}', ListaCurriculosController::class);
 Route::post('/curriculo', CriarCurriculoController::class);
 Route::put('/curriculo/{id}', EditarCurriculoController::class)-> where(['id' => '[0-9]+']);
-Route::delete('/curriculo/{id}', DeleteCurriculoController::class)-> where(['id' => '[0-9]+']);
+Route::delete('/curriculo/{id}', DeletarCurriculoController::class)-> where(['id' => '[0-9]+']);

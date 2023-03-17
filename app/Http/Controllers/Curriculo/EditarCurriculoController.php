@@ -16,6 +16,8 @@ class EditarCurriculoController extends Controller
     {
         $this->curriculo = $curriculo;
     }
+
+    
     public function __invoke(EditarCurriculoRequest $request, $id = null)
  { 
         try {
